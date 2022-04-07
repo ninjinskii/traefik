@@ -1,0 +1,18 @@
+http:
+  routers:
+    traefik:
+      rule: "Host(`traefik.njk.localhost`)"
+      service: "api@internal"
+      tls:
+        domains:
+          - main: "njk.localhost"
+            sans:
+              - "*.njk.localhost"
+          - main: "domain.local"
+            sans:
+              - "*.domain.local"
+
+tls:
+  certificates:
+    - certFile: "/etc/certs/mkcert.pem"
+      keyFile: "/etc/certs/mkcert-key.pem"
