@@ -17,7 +17,7 @@ You can acces the traefik dashboard at [https://traefik.njk.localhost/dashboard/
 This traefik setup is used to deploy various https urls for multiple local projects
 It requires a little docker-compose configuration:
 
-In services that requires to display a UI, add the `labels` and `network` key
+In services that requires to be accessible (like UIs & databases), add the `labels` and `network` key
 
 ```yaml
 services:
@@ -39,6 +39,6 @@ services:
 
 ```
 
-Your UI will be accessible at `project.njk.localhost`
+Your service will be accessible at `project.njk.localhost`
 
 
